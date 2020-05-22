@@ -18,8 +18,10 @@ def time_to_juist():
 		symbol = '☹️'
 	elif tage > 50:
 		symbol = '😕'
-	else:
+	elif tage > 10:
 		symbol = '🙂'
+	else:
+		symbol = '😁'
 	return tagetxt, symbol
 
 def get_local_ip():
