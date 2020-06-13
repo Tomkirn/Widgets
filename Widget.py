@@ -10,8 +10,8 @@ import ui
 import socket
 import datetime
 
-def time_to_juist():
-	delta = (datetime.date(2020, 5, 30) - datetime.date.today())
+def time_to_holiday(y,m,d):
+	delta = (datetime.date(y, m, d) - datetime.date.today())
 	tage = delta.days
 	tagetxt = str(tage)+' Tage'
 	if tage > 100:
@@ -44,13 +44,15 @@ def button_action(sender):
 		webbrowser.open(sender.name)
 
 vfont = ('<system>', 14)
-efont = ('<system>', 36)
+efont = ('<system>', 30)
 view = ui.View()
 
-label1 = ui.Label(font=vfont, text='IP: '+get_local_ip())
-label2 = ui.Label(font=vfont, text='eIP: '+get_global_ip())
-label3 = ui.Label(font=vfont, text='Juist: '+time_to_juist()[0])
-label4 = ui.Label(font=efont, text=time_to_juist()[1])
+#label1 = ui.Label(font=vfont, text='IP: '+get_local_ip())
+label1 = ui.Label(font=vfont, text='September Urlaub: '+time_to_holiday(2020,9,28)[0])
+#label2 = ui.Label(font=vfont, text='eIP: '+get_global_ip())
+label2 = ui.Label(font=vfont, text='Keksbackwoche: '+time_to_holiday(2020,11,23)[0])
+label3 = ui.Label(font=vfont, text='Juist: '+time_to_holiday(2021,5,30)[0])
+label4 = ui.Label(font=efont, text=time_to_holiday(2021,5,30)[1])
 
 button1 = ui.Button(title=' ⚓️ NavTex ', font=vfont, border_width=0, action=button_action, name='pythonista3://NavTest.py?action=run&root=icloud', corner_radius=9, bg_color='#00ffde')
 button2 = ui.Button(title=' 🌦 DWD Wetter ', font=vfont, border_width=0, action=button_action, name='pythonista3://DWDWetter.py?action=run', corner_radius=9, bg_color='#00ffde')
