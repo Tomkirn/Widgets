@@ -43,7 +43,8 @@ def button_action(sender):
 		import webbrowser
 		webbrowser.open(sender.name)
 
-vfont = ('<system>', 14)
+vfont = ('<system>', 15)
+bfont = ('<system>', 14)
 efont = ('<system>', 30)
 view = ui.View()
 
@@ -54,8 +55,8 @@ label2 = ui.Label(font=vfont, text=time_to_holiday(2020,11,23)[1]+'Keksbackwoche
 label3 = ui.Label(font=vfont, text=time_to_holiday(2021,5,30)[1]+'Juist: '+time_to_holiday(2021,5,30)[0])
 label4 = ui.Label(font=efont, text=time_to_holiday(2021,5,30)[1])
 
-button1 = ui.Button(title=' ⚓️ NavTex ', font=vfont, border_width=0, action=button_action, name='pythonista3://NavTest.py?action=run&root=icloud', corner_radius=9, bg_color='#00ffde')
-button2 = ui.Button(title=' 🌦 DWD Wetter ', font=vfont, border_width=0, action=button_action, name='pythonista3://DWDWetter.py?action=run', corner_radius=9, bg_color='#00ffde')
+button1 = ui.Button(title=' ⚓️ NavTex ', font=bfont, border_width=0, action=button_action, name='pythonista3://NavTest.py?action=run&root=icloud', corner_radius=9, bg_color='#00ffde')
+button2 = ui.Button(title=' 🌦 DWD Wetter ', font=bfont, border_width=0, action=button_action, name='pythonista3://DWDWetter.py?action=run', corner_radius=9, bg_color='#00ffde')
 
 view.add_subview(label1)
 view.add_subview(label2)
